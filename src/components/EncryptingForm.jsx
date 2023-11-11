@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Form = styled.form`
   border-radius: 28px;
-  width: 422px;
+  width: 410px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,8 +30,14 @@ const EncryptButton = styled.button`
   box-sizing: border-box;
   &:hover {
     cursor: pointer;
+    background: #0035bd;
   }
   font-size: 16px;
+  transition: background 0.2s ease-out;
+  &:disabled {
+    background: #98b1f1;
+    cursor: auto;
+  }
 `;
 
 const TextInput = styled.input`
@@ -46,6 +52,10 @@ const TextInput = styled.input`
   box-sizing: border-box;
   padding-left: 10px;
   font-size: 16px;
+
+  &:focus {
+    outline-color: #3e6de8;
+  }
 `;
 
 const TextErrorMessage = styled.p`
@@ -63,23 +73,25 @@ const EncryptingForm = ({
   isValid,
 }) => {
   return (
-    <Form onSubmit={handleSubmit}>
-      <TextInput
-        type="text"
-        name="text"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={text}
-        placeholder="Enter the text to be encrypted..."
-      />
-      <ErrorMessage
-        render={(msg) => <TextErrorMessage>{msg}</TextErrorMessage>}
-        name="text"
-      />
-      <EncryptButton type="submit" disabled={!isValid}>
-        Encrypt
-      </EncryptButton>
-    </Form>
+    <>
+      <Form onSubmit={handleSubmit}>
+        <TextInput
+          type="text"
+          name="text"
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={text}
+          placeholder="Enter the text to be encrypted..."
+        />
+        <ErrorMessage
+          render={(msg) => <TextErrorMessage>{msg}</TextErrorMessage>}
+          name="text"
+        />
+        <EncryptButton type="submit" disabled={!isValid}>
+          Encrypt
+        </EncryptButton>
+      </Form>
+    </>
   );
 };
 
