@@ -22,7 +22,7 @@ const EncryptingStepContainer = styled.div`
 
 const VersionHeading = styled.h2`
   width: 100%;
-  text-align: start;
+  text-align: center;
   margin: 0;
 `;
 
@@ -57,7 +57,6 @@ const EncryptingStep = ({ local, version }) => {
       {submitted && (
         <>
           <ArrowIcon />
-
           <EncryptedMessage {...{ local, submittedText }} />
         </>
       )}

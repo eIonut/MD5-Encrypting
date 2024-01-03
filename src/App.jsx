@@ -1,12 +1,7 @@
 import Routes from "./routes";
 
 function App() {
-  return (
-    <Routes />
-    // <>
-    //   <EncryptingStep></EncryptingStep>
-    // </>
-  );
+  return <Routes />;
 }
 
 export default App;

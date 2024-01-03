@@ -14,6 +14,10 @@ const Form = styled.form`
   box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.35);
   padding: 34px 57px;
   box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    width: 350px;
+  }
 `;
 
 const EncryptButton = styled.button`

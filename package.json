@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "formik": "^2.4.5",
+    "mammoth": "^1.6.0",
     "md5": "^2.3.0",
+    "pdfjs-dist": "^4.0.379",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

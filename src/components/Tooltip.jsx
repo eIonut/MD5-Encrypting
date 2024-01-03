@@ -12,16 +12,16 @@ const TooltipText = styled.span`
   visibility: hidden;
   width: 200px;
   max-width: 200px;
-  overflow: auto;
+  max-height: 100px;
   word-wrap: break-word;
   background-color: black;
   color: #fff;
-  text-align: center;
-  padding: 5px;
+  text-align: start;
+  padding-left: 6px;
   border-radius: 6px;
   position: absolute;
-  right: -250px;
-  top: -20px;
+  right: 25px;
+  top: -40px;
   z-index: 1;
   ${TooltipContainer}:hover & {
     visibility: visible;
@@ -34,7 +34,11 @@ const Tooltip = ({ children, text }) => {
   return (
     <TooltipContainer $text={text}>
       {children}
-      {showTooltip && <TooltipText>{text}</TooltipText>}
+      {showTooltip && (
+        <TooltipText>
+          {text.length > 60 ? text.slice(0, 60) + "..." : text}
+        </TooltipText>
+      )}
     </TooltipContainer>
   );
 };
